@@ -5,8 +5,24 @@
 @tailwind utilities;
 
 body {
-  background-color: #20242d;
+  height: 100vh;
+  background: radial-gradient(
+      ellipse at top,
+      rgba(2, 0, 36, 1),
+      rgba(0, 0, 0, 0.3)
+    ),
+    radial-gradient(ellipse at bottom, rgba(9, 9, 121, 1), #0077b6);
+  background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   overflow-x: hidden;
+}
+
+.active {
+  background-color: black;
+  border-radius: 10px;
+}
+
+.container {
+  height: 100vh;
 }

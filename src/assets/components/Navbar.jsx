@@ -1,20 +1,41 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleMenuClick = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
   return (
     <>
       <div className=" text-white flex justify-between items-center h-16 max-w-[1240px] mx-auto">
         <h1 className="w-full text-3xl font-bold ml-4">fk</h1>
-        <ul className=" flex max-sm:hidden">
-          <li className="p-2">Home</li>
-          <li className="p-2">About</li>
-          <li className="p-2">LinkedIn</li>
+        <ul className="flex max-sm:hidden">
+          <li className="p-2">
+            <NavLink className="p-2" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li className="p-2">
+            <NavLink className="p-2" to="/about">
+              About
+            </NavLink>
+          </li>
+          <li className="p-2">
+            <NavLink to="https://www.github.com/mrzafrkn" target="blank">
+              GitHub
+            </NavLink>
+          </li>
+          <li className="p-2">
+            <NavLink
+              to="https://www.linkedin.com/in/mirzafkalkan/"
+              target="blank"
+            >
+              LinkedIn
+            </NavLink>
+          </li>
         </ul>
-        <div
-          className="block sm:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        <div className="block sm:hidden" onClick={() => handleMenuClick()}>
           {mobileMenuOpen ? (
             <AiOutlineClose size={20} />
           ) : (
@@ -28,9 +49,37 @@ const Navbar = () => {
         } text-white text-center`}
       >
         <ul>
-          <li className="p-3">Home</li>
-          <li className="p-3">About</li>
-          <li className="p-3">LinkedIn</li>
+          <li className="p-3 border-y-2">
+            <NavLink className="p-2" onClick={() => handleMenuClick()} to="/">
+              Home
+            </NavLink>
+          </li>
+          <li className="p-3 border-b-2">
+            <NavLink
+              className="p-2"
+              onClick={() => handleMenuClick()}
+              to="/about"
+            >
+              About
+            </NavLink>
+          </li>
+          <li className="p-3 border-b-2">
+            <NavLink
+              onClick={() => handleMenuClick()}
+              to="https://www.github.com/mrzafrkn"
+              target="blank"
+            >
+              GitHub
+            </NavLink>
+          </li>
+          <li className="p-3 border-b-2">
+            <NavLink
+              to="https://www.linkedin.com/in/mirzafkalkan/"
+              target="blank"
+            >
+              LinkedIn
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>
