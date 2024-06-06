@@ -1,7 +1,7 @@
 import { ReactTyped } from "react-typed";
 const Hero = () => {
   return (
-    <div className="text-white flex justify-center h-screen max-h-[620px]">
+    <div className="text-white flex justify-center h-620px max-h-[620px]">
       <div className="max-w-[1200px] w-full mt-10">
         <ReactTyped
           className="text-3xl"
